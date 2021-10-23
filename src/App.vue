@@ -1,28 +1,32 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <section id="app" class="todoapp">
+        <header class="header">
+            <h1>todos</h1>
+            <TodoInput 
+
+            />
+        </header>
+        <TodoList 
+
+        />
+    </section>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import store from './store'
+import TodoInput from './components/TodoInput.vue'
+import TodoList from './components/TodoList.vue'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'app',
+    store,
+    components: {
+        TodoInput,
+        TodoList,
+    }    
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url("https://unpkg.com/todomvc-app-css@2.2.0/index.css");
 </style>
